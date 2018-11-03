@@ -22,7 +22,24 @@
 <body>
     <a class="btn btn-primary" type="submit" href="index.html" role="button">Volver</a>
 <div class="boton">
-    <button class="btn btn-info">Articulos</button>
+    <button onclick="" id="botonArt" class="btn btn-info">Articulos</button>
 </div>
+
+
+
+
+<script>
+
+    $("#botonArt").click(function(){
+    $.ajax({
+        url: "abmMongo.js",
+        data: ,
+        succes: function(data){
+
+        }
+    })    
+}
+
+</script>
 </body>
 </html>
