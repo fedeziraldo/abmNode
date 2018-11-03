@@ -1,0 +1,29 @@
+
+use ABMNode
+
+ABMNode.createCollection("productos")
+db.productos.insert([{
+   
+    
+   description: 'Remera',
+   precio:300
+   
+   
+},
+{
+   
+    
+   description: 'Pantalon',
+   precio:500
+   
+   
+},
+{
+   
+    
+   description: 'Saco',
+   precio:600
+   
+   
+}])
+
