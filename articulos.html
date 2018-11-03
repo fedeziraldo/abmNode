@@ -9,6 +9,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
     <title>articulos</title>
 
 </head>
@@ -20,25 +24,44 @@
 
 </style>
 <body>
-    <a class="btn btn-primary" type="submit" href="index.html" role="button">Volver</a>
+    <a class="btn btn-primary" type="submit" href="/" role="button">Volver</a>
 <div class="boton">
     <button onclick="" id="botonArt" class="btn btn-info">Articulos</button>
 </div>
 
+<div id="info">
+
+</div>
 
 
 
-<script>
+<!-- <script>
 
     $("#botonArt").click(function(){
     $.ajax({
         url: "abmMongo.js",
-        data: ,
+        data:"" ,
         succes: function(data){
 
         }
     })    
 }
+
+</script> -->
+
+<script>
+
+    $.getJSON("/consulta", function(dato){
+        for(i=0;i<dato.length;i++){
+            $("#info").append("<p>"+dato[i].precio+"</p>");
+            $("#info").append("<p>"+dato[i].description+"</p>");
+        }
+    
+        
+    
+})
+
+
 
 </script>
 </body>

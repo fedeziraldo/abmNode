@@ -4,7 +4,7 @@ var url = "mongodb://localhost:27017/";
 var bodyParser = require('body-parser');
 var path    = require("path");
 
-app.post('/consulta', function (req, res) {
+app.get('/consulta', function (req, res) {
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("ABMNode");
@@ -12,7 +12,7 @@ app.post('/consulta', function (req, res) {
             if (err) throw err;
             console.log(result);
             db.close();
-            res.send(result)
+            res.json(result)
         });
     });
 })
@@ -23,5 +23,6 @@ app.get('/', function (req, res) {
 });
 app.post('/form',function(req,res){
     console.log(req.body.email)
+    res.sendFile(path.join(__dirname+'/articulos.html'));
 })
 app.listen(3000);
