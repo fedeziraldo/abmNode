@@ -18,11 +18,11 @@ rutas.get('/consulta', function (req, res) {
 })
 
 rutas.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname+'vista/index.html'));
+    res.sendFile(path.join(__dirname+'/vista/index.html'));
 });
 rutas.post('/form',function(req,res){
     console.log(req.body.email)
-    res.sendFile(path.join(__dirname+'vista/articulos.html'));
+    res.sendFile(path.join(__dirname+'/vista/articulos.html'));
 })
 
 module.exports=rutas;
