@@ -4,7 +4,7 @@ var path= require("path");
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 
-rutas.get('/consulta', function (req, res) {
+rutas.post('/consulta', function (req, res) {
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("ABMNode");
@@ -17,7 +17,7 @@ rutas.get('/consulta', function (req, res) {
     });
 })
 
-rutas.get('/borrarProducto', function (req, res) {
+rutas.post('/borrarProducto', function (req, res) {
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("ABMNode");

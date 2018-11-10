@@ -63,7 +63,7 @@
 
 <script>
 
-    $.getJSON("/consulta", function(dato){
+    $.post("/consulta", function(dato){
         for(i=0;i<dato.length;i++){
             $("#info").append("<p>"+dato[i].precio+"</p>");
             $("#info").append("<p>"+dato[i].description+"</p>");

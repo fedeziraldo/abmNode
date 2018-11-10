@@ -30,12 +30,12 @@ db.productos.insert([{
 db.clientes.insert([
 
     {
-        nombre: pepe,
+        nombre: 'pepe',
         compras: []
-    }
+    },
 
     {
-        nombre: fede,
+        nombre: 'fede',
         compras: []
     }
 ])
