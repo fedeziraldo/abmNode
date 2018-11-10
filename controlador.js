@@ -1,9 +1,10 @@
-var app = require('express')();
+var app = require('express');
+var rutas = app.Router();
+var path= require("path");
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/";
 
-var bodyParser = require('body-parser');
-
-var controlador = require('./controlador.js');
-/* app.get('/consulta', function (req, res) {
+rutas.get('/consulta', function (req, res) {
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("ABMNode");
@@ -14,16 +15,14 @@ var controlador = require('./controlador.js');
             res.json(result)
         });
     });
-}) */
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true }));
+})
 
-app.use('/', controlador);
-/* app.get('/', function (req, res) {
+rutas.get('/', function (req, res) {
     res.sendFile(path.join(__dirname+'/index.html'));
 });
-app.post('/form',function(req,res){
+rutas.post('/form',function(req,res){
     console.log(req.body.email)
     res.sendFile(path.join(__dirname+'/articulos.html'));
-}) */
-app.listen(3000);
+})
+
+module.exports=rutas;
