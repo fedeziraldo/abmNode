@@ -7,7 +7,8 @@ function apagar(){
 
 }
 
-function mostrar_ocultar(){
+function atenuar(){
+
   var boton = document.getElementById("botonArt");
 
     if(botonArt.style.opacity == "0.5"){
@@ -16,7 +17,7 @@ function mostrar_ocultar(){
     else{
       apagar();
     }
-
+    mostrar_ocultar();
     
 } 
 
