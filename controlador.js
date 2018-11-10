@@ -23,6 +23,7 @@ rutas.get('/consulta', function (req, res) {
 rutas.get('/carga',function(req,res){
 
 
+<<<<<<< HEAD
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("ABMNode");
@@ -34,6 +35,20 @@ MongoClient.connect(url, function(err, db) {
     });
   });
 })
+=======
+rutas.get('/borrarProducto', function (req, res) {
+    MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("ABMNode");
+        dbo.collection("productos").deleteOne({ description: req.query.producto }, function(err, obj) {
+            if (err) throw err;
+            console.log("1 document deleted");
+            db.close();
+        });
+    });
+})
+
+>>>>>>> 10856567060558744d4d980c301fc7a916dbc90d
 rutas.get('/', function (req, res) {
     res.sendFile(path.join(__dirname+'/vista/index.html'));
 });

@@ -1,7 +1,7 @@
 
 use ABMNode
+db.dropDatabase()
 
-ABMNode.createCollection("productos")
 db.productos.insert([{
    
     
@@ -26,4 +26,17 @@ db.productos.insert([{
    
    
 }])
+
+db.clientes.insert([
+
+    {
+        nombre: pepe,
+        compras: []
+    }
+
+    {
+        nombre: fede,
+        compras: []
+    }
+])
 
