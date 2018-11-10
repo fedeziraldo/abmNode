@@ -1,8 +1,10 @@
 var app = require('express')();
-
 var bodyParser = require('body-parser');
-
 var controlador = require('./controlador.js');
+var producto=require("./modelo/producto.js");
+var nuevoProducto=new producto();
+nuevoProducto.setprecio(500);
+console.log(nuevoProducto.getprecio())
 /* app.get('/consulta', function (req, res) {
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
@@ -17,7 +19,6 @@ var controlador = require('./controlador.js');
 }) */
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
-
 app.use('/', controlador);
 /* app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname+'/index.html'));
