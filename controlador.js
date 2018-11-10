@@ -3,12 +3,17 @@ var rutas = app.Router();
 var path= require("path");
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
+<<<<<<< HEAD
+
+rutas.post('/consulta', function (req, res) {
+=======
 var producto=require("./modelo/producto.js");
 var nuevoProducto=new producto();
 nuevoProducto.setprecio(500);
 console.log(nuevoProducto.getprecio())
 nuevoProducto.setdescripcion('buzo');
 rutas.get('/consulta', function (req, res) {
+>>>>>>> 43bc18bb163e0c3c0fd20d8249f0934849136181
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("ABMNode");
@@ -23,6 +28,13 @@ rutas.get('/consulta', function (req, res) {
 rutas.get('/carga',function(req,res){
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+rutas.post('/borrarProducto', function (req, res) {
+=======
+<<<<<<< HEAD
+>>>>>>> bd778dc3cf5b3ceeb7f14784a6ba747159b8dd27
 MongoClient.connect(url, function(err, db) {
     if (err) throw err;
     var dbo = db.db("ABMNode");
@@ -35,6 +47,7 @@ MongoClient.connect(url, function(err, db) {
   });
 })
 rutas.get('/borrarProducto', function (req, res) {
+>>>>>>> 43bc18bb163e0c3c0fd20d8249f0934849136181
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
         var dbo = db.db("ABMNode");
