@@ -36,9 +36,12 @@ rutas.get('/carga',function(req,res){
       });
     })
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> 96be5df04310eadd98eefd9a35e29d2b6b5e7d93
 rutas.get('/borrarProducto', function (req, res) {
 
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
