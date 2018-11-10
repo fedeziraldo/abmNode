@@ -3,6 +3,8 @@ function mostrar(){
 }
 function apagar(){
   document.getElementById("botonArt").style.opacity = "0.5";
+
+
 }
 
 function mostrar_ocultar(){
@@ -14,4 +16,10 @@ function mostrar_ocultar(){
     else{
       apagar();
     }
+    document.getElementById("articulos").classList.toggle("show");
+
 } 
+
+function mostrar_ocultar() {
+  
+}
