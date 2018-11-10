@@ -16,10 +16,10 @@ function mostrar_ocultar(){
     else{
       apagar();
     }
-    document.getElementById("articulos").classList.toggle("show");
 
+    
 } 
 
 function mostrar_ocultar() {
-  
+  document.getElementById("articulos").classList.toggle("show");
 }
