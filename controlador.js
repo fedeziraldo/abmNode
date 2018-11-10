@@ -17,12 +17,24 @@ rutas.get('/consulta', function (req, res) {
     });
 })
 
+rutas.get('/borrarProducto', function (req, res) {
+    MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
+        if (err) throw err;
+        var dbo = db.db("ABMNode");
+        dbo.collection("productos").deleteOne({ description: req.query.producto }, function(err, obj) {
+            if (err) throw err;
+            console.log("1 document deleted");
+            db.close();
+        });
+    });
+})
+
 rutas.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname+'vista/index.html'));
+    res.sendFile(path.join(__dirname+'/vista/index.html'));
 });
 rutas.post('/form',function(req,res){
     console.log(req.body.email)
-    res.sendFile(path.join(__dirname+'vista/articulos.html'));
+    res.sendFile(path.join(__dirname+'/vista/articulos.html'));
 })
 
 module.exports=rutas;
