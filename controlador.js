@@ -9,6 +9,7 @@ var nuevoProducto=new producto();
 nuevoProducto.setprecio(500);
 console.log(nuevoProducto.getprecio())
 nuevoProducto.setdescripcion('buzo');
+var usuario=require("./modelo/usuario.js");
 
 rutas.get('/consulta', function (req, res) {
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
@@ -51,9 +52,14 @@ rutas.get('/borrarProducto', function (req, res) {
     });
 })
 
-rutas.get('/', function (req, res) {
+/* rutas.get('/', function (req, res) {
+
     res.sendFile(path.join(__dirname+'/vista/index.html'));
-});
+}); */
+rutas.get('/',function(req,res){
+    var usu=new usuario();
+    res.json(usu)
+})
 rutas.post('/form',function(req,res){
     console.log(req.body.email)
     res.sendFile(path.join(__dirname+'/vista/articulos.html'));
