@@ -18,16 +18,24 @@
 			
 </head>
 <style>
+    .boton{
+        margin:0 40%;
+    }
+
     .btn-info{
         font-size: 6rem;
-        margin: 10% 30%;
+      
+    }
+
+    .table{
+        text-align: center;
     }
 
 </style>
 <body>
     <a class="btn btn-primary" type="submit" href="/" role="button">Volver</a>
 <div class="boton">
-    <button onclick="" id="botonArt" class="btn btn-info">Articulos</button>
+    <button onclick="" id="botonArt" class="btn btn-info" onclick="mostrar()">Articulos</button>
 </div>
 
 <div id="info">
@@ -41,6 +49,14 @@
         <td>Cliente</td>
         <td>Precio</td>
         <td>Precio Total</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
 
 </table>
@@ -72,10 +88,7 @@
         
     
 })
-
-
-
-  
 </script>
+<script src="funciones.js"></script>
 </body>
 </html>
