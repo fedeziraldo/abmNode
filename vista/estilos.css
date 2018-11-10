@@ -1,0 +1,40 @@
+.boton{
+  margin:0 40%;
+}
+.btn-info{
+      font-size: 6rem; 
+}
+.table{
+  text-align: center;
+}
+#botonArt {
+
+}
+
+#btn-info:hover, #btn-info:focus {
+  background-color: #2980B9;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  display: none;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: black;
+  
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+.show {display:block;}
