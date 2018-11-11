@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="estilos.css"> 
+ <!-- <link rel="stylesheet" href="estilos.css">  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -84,7 +84,7 @@
 <div id="info">
 
 </div>
-<table class="table">
+<table class="table" id="tabla">
     <tr>
         <td>Cantidad</td>
         <td>Precio</td>
@@ -122,16 +122,27 @@
 
 <script>
 
-    $.post("/consulta", function(dato){
+  /*   $.post("/consulta", function(dato){
         for(i=0;i<dato.length;i++){
             $("#info").append("<p>"+dato[i].precio+"</p>");
             $("#info").append("<p>"+dato[i].description+"</p>");
         }
-    
         
-    
+}) */
+//diego asi es como deberias perdir al servidor y mostrarlo en la pagina
+
+
+//con esta linea pedis al servidor
+$.getJSON("/consulta",function(data){
+//data tiene todo el contenido que te manda el servidor
+//como es un array de cosas lo tenes que iterar con un for
+for(i=0;data.length;i++){
+//si queres hacer uan tabla para mostrar el contenido tenes que hacer asi
+var tabla='<tr><td>'+data[i].precio+'</td><td>'+data[i].descripcion+'</td></tr>';
+$('#tabla').append(tabla);
+}
 })
 </script>
-<script src="funciones.js"></script>
+
 </body>
 </html>

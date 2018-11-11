@@ -55,11 +55,18 @@ rutas.get('/borrarProducto', function (req, res) {
     res.sendFile(path.join(__dirname+'/vista/index.html'));
 }); */
 rutas.get('/',function(req,res){
-    var usu=new usuario();
+    
    
-    res.s(path.join(__dirname+'/vista/index.html'));
+    res.sendFile(path.join(__dirname+'/vista/index.html'));
     
 })
+/* rutas.post('/',function(req,res){
+    var usu=new usuario();
+   
+    res.json(usu)
+    
+}) */
+
 rutas.post('/form',function(req,res){
     console.log(req.body.email)
     res.sendFile(path.join(__dirname+'/vista/articulos.html'));
