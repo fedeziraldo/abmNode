@@ -1,10 +1,12 @@
-var app = require('express')();
+var express=require('express')
+var app =express();
 var bodyParser = require('body-parser');
 var controlador = require('./controlador.js');
-var producto=require("./modelo/producto.js");
-var nuevoProducto=new producto();
-nuevoProducto.setprecio(500);
-console.log(nuevoProducto.getprecio())
+app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/', controlador);
+app.listen(3000);
+
 /* app.get('/consulta', function (req, res) {
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
@@ -17,9 +19,7 @@ console.log(nuevoProducto.getprecio())
         });
     });
 }) */
-app.use(bodyParser.json()); 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/', controlador);
+
 /* app.get('/', function (req, res) {
     res.sendFile(path.join(__dirname+'/index.html'));
 });
@@ -27,4 +27,3 @@ app.post('/form',function(req,res){
     console.log(req.body.email)
     res.sendFile(path.join(__dirname+'/articulos.html'));
 }) */
-app.listen(3000);

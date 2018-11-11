@@ -1,4 +1,5 @@
 var app = require('express');
+
 var rutas = app.Router();
 var path= require("path");
 var MongoClient = require('mongodb').MongoClient;
@@ -7,7 +8,7 @@ var url = "mongodb://localhost:27017/";
 var producto=require("./modelo/producto.js");
 var nuevoProducto=new producto();
 nuevoProducto.setprecio(500);
-console.log(nuevoProducto.getprecio())
+
 nuevoProducto.setdescripcion('buzo');
 var usuario=require("./modelo/usuario.js");
 
@@ -36,12 +37,6 @@ rutas.get('/carga',function(req,res){
       });
     })
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 96be5df04310eadd98eefd9a35e29d2b6b5e7d93
 rutas.get('/borrarProducto', function (req, res) {
 
     MongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
@@ -61,7 +56,9 @@ rutas.get('/borrarProducto', function (req, res) {
 }); */
 rutas.get('/',function(req,res){
     var usu=new usuario();
-    res.json(usu)
+   
+    res.s(path.join(__dirname+'/vista/index.html'));
+    
 })
 rutas.post('/form',function(req,res){
     console.log(req.body.email)
